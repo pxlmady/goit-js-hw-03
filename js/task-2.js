@@ -1,16 +1,8 @@
 function makeArray(firstArray, secondArray, maxLength) {
-    const totalArray = [];
+    const totalArray = firstArray.concat(secondArray);
 
-    for (let element of firstArray) {
-        if (totalArray.length < maxLength) {
-            totalArray.push(element);
-        }
-    }
-
-    for (let element of secondArray) {
-        if (totalArray.length < maxLength) {
-            totalArray.push(element);
-        }
+    if (totalArray.length > maxLength) {
+        return totalArray.slice(0, maxLength);
     }
 
     return totalArray;
